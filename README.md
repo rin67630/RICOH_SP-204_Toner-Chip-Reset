@@ -26,12 +26,19 @@ I recommend to use a Wemos D1, since it has everything on board and does not nee
 The teensy Huzzah is also a good candidate.
 **Please do not use an Arduino Nano/Uno..., since this device runs at 5 V and we need 3.3V !**
 
-Make a contact comb (using e.g. the gold feather wires from a RJ12 connector) and soldering them on a piece of prototyping PCB.
+Make a contact comb (using e.g. the gold plated feather wires from a RJ12 connector) and soldering them on a piece of prototyping PCB.
 
 Wire as shown on the picture.
+
 ![Wiring the resetter](RicohSP200_resetter.jpg)
 
-To reset the cartridge, just apply the contacts (the green wire showing to the center of the cartridge and the the black wire showing to the edge of the cartridge) and press the reset button of the Wemos/Arduino, wait 4 seconds and release the contacts.
+To reset the cartridge:
+-power the resetter with an USB charger, 
+-wait for 5 seconds, 
+-then apply the contacts upside down from the back of the cartridge 
+  (the green wire showing to the center of the cartridge and the the black wire showing to the edge of the cartridge) 
+-then press the reset button of the Wemos/Arduino, 
+-wait 4 seconds and release the contacts.
 
 Done!
 
@@ -52,7 +59,6 @@ chip circuit, dumping the chip contents and writing back a pattern so the
 printer will be able to initialize the chip and set the toner level to full.
 
 # The problem
-
 My computer talks to the SP-204 printer via an Ethernet link.
 The printer communicates with the toner chip via the I2C bus.
 
@@ -346,6 +352,8 @@ please share your findings with the community!
 - [x] Verify the write function
 - [x] Experiment with reset patterns
 - [x] Test with the printer
-- [ ] Document the project
-- [ ] Learn about README.md format (image insertion & style)
+- [x] Document the project
+- [x] Learn about README.md format (image insertion & style)
+- [x] Make it easier to use for users
+- [x] Make a variant for SP150
 
