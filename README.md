@@ -20,13 +20,13 @@ In order to reuse this kind of toner, there are two things you need to do:
 # Building the Resetter.
 
 You can upload this program on a Wemos D1 or an Arduino Pro Mini
-(if you want to build the receptor for RICOH_SP-150 series, change the first line #define RICOH200 to #define RICOH150)
+(if you want to build the resetter for RICOH_SP-150 series, change the first line #define RICOH200 to #define RICOH150)
 
 I recommend to use a Wemos D1, since it has everything on board and does not need a programmer.
 The teensy Huzzah is also a good candidate.
 **Please do not use an Arduino Nano/Uno..., since this device runs at 5 V and we need 3.3V !**
 
-Make a contact comb using e.g. the gold feather wires from a RJ12 connector and soldering them on a piece of prototyping PCB.
+Make a contact comb (using e.g. the gold feather wires from a RJ12 connector) and soldering them on a piece of prototyping PCB.
 
 Wire as shown on the picture.
 ![Wiring the resetter](RicohSP200_resetter.jpg)
