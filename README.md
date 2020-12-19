@@ -27,7 +27,7 @@ The teensy Huzzah is also a good candidate.
 **Please do not use an Arduino Nano/Uno..., since this device runs at 5 V and we need 3.3V !**
 
 Make a contact comb using e.g. the gold feather wires from a RJ12 connector and soldering them on a piece of prototyping PCB.
-cf. RicohSP200_resetter.jpg
+
 Wire as shown on the picture.
 
 To reset the cartridge, just apply the contacts (the green wire showing to the center of the cartridge and the the black wire showing to the edge of the cartridge) and press the reset button of the Wemos/Arduino, wait 4 seconds and release the contacts.
