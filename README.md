@@ -1,4 +1,4 @@
-# RICOH_SP-204_Toner-Chip-Reset
+# RICOH_SP-200 series, RICOH_SP-150 series_Toner-Chip-Reset
 
 # Acknowledgement
 
@@ -6,8 +6,6 @@ I'd like to thank Ludovic Guegan (lugu), from whom I copied the base for this wo
 for inspiring me to do experiment with my printers (RICOH Aficio SP-204) toner chip 
 model and be able to reset it effectively. It has been a great learning experience 
 on how the I2C protocol works and how to manipulate I2C EEPROMS.
-
-# Introduction
 
 The RICOH SP 204 printer toners have a chip that keeps track of the number of pages that have been printed.
 This is anoying because it will render a refill useless.
@@ -18,6 +16,25 @@ In order to reuse this kind of toner, there are two things you need to do:
 
 1. refill the toner with ink (if needed)
 2. reset the toner chip (or replace it)
+
+# Building the Resetter.
+
+You can upload this program on a Wemos D1 or an Arduino Pro Mini
+(if you want to build the receptor for RICOH_SP-150 series, change the first line #define RICOH200 to #define RICOH150)
+
+I recommend to use a Wemos D1, since it has everything on board and does not need a programmer.
+The teensy Huzzah is also a good candidate.
+**Please do not use an Arduino Nano/Uno..., since this device runs at 5 V and we need 3.3V !**
+
+Make a contact comb using e.g. the gold feather wires from a RJ12 connector and soldering them on a piece of prototyping PCB.
+cf. RicohSP200_resetter.jpg
+Wire as shown on the picture.
+
+To reset the cartridge, just apply the contacts (the green wire showing to the center of the cartridge and the the black wire showing to the edge of the cartridge) and press the reset button of the Wemos/Arduino, wait 4 seconds and release the contacts.
+
+Done!
+
+# Analysis of the development process
 
 There is [plenty of information](www.uni-kit.com/pdf/tonerrefillinstructions.pdf) explaining how to refill the
 toner but little information on how to erase the toner chip.
@@ -32,9 +49,6 @@ do the same with their printer toner cartridges.
 I will step through the process of understanding the problem, analysing the
 chip circuit, dumping the chip contents and writing back a pattern so the 
 printer will be able to initialize the chip and set the toner level to full.
-
-
-
 
 # The problem
 
