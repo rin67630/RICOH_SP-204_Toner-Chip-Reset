@@ -2,10 +2,8 @@
 
 # Acknowledgement
 
-I'd like to thank Ludovic Guegan (lugu), from whom I copied the base for this work, 
-for inspiring me to do experiment with my printers (RICOH Aficio SP-204) toner chip 
-model and be able to reset it effectively. It has been a great learning experience 
-on how the I2C protocol works and how to manipulate I2C EEPROMS.
+I'd like to thank Ludovic Guegan (lugu) and Seurat (seurat-atreides), from whom I copied the base for this work, 
+for inspiring me to build a resetter for my printer (RICOH Aficio SP-210) toner chip and to improve the program to be used without a computer with just a simple push of the reset button.. 
 
 The RICOH SP 204 printer toners have a chip that keeps track of the number of pages that have been printed.
 This is anoying because it will render a refill useless.
@@ -41,6 +39,16 @@ To reset the cartridge:
 -wait 4 seconds and release the contacts.
 
 Done!
+
+# For advanced users
+
+If you want to go beyond the simple user reset, you may read the following and learn to dump the contents of the chip, eventually empowering you to extend the program to additional printer models.
+
+Caveat: if you want to dump the content of the chip, it is important to apply the contacts to the cartridge chip **only at least 5 seconds after having (re)started the Wemos/Arduino**, 
+else it will reset the chip and jeopardize all the information you want to dump!
+
+
+
 
 # Analysis of the development process
 
